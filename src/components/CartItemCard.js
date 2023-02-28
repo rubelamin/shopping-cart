@@ -23,7 +23,7 @@ export default function CartItemCard({ cartItem }) {
       <div className="flex items-center col-span-6 space-x-6">
         <img
           className="lws-cartImage"
-          src="https://i.dummyjson.com/data/products/40/thumbnail.jpg"
+          src={productFind?.productImg}
           alt="product"
         />
         <div className="space-y-2">

@@ -34,12 +34,22 @@ export default function ProductCard({ data }) {
             QTY <span className="lws-quantity">{data.productQty}</span>
           </p>
         </div>
-        <button
-          className="lws-btnAddToCart"
-          onClick={() => carthandler(data.id, data.productPrice)}
-        >
-          Add To Cart {data.id}
-        </button>
+        {data.productQty === 0 ? (
+          <button
+            className="lws-btnAddToCart"
+            onClick={() => carthandler(data.id, data.productPrice)}
+            disabled
+          >
+            Add To Cart {data.id}
+          </button>
+        ) : (
+          <button
+            className="lws-btnAddToCart"
+            onClick={() => carthandler(data.id, data.productPrice)}
+          >
+            Add To Cart {data.id}
+          </button>
+        )}
       </div>
     </div>
   );
